@@ -1,8 +1,10 @@
 package org.example;
+import com.pluralsight.PayrollCalculator;
 import com.pluralsight.Saiyan;
 import com.pluralsight.S;
 import java.util.Scanner;
 import com.pluralsight.BasicCalculator;
+import com.pluralsight.PayrollCalculator;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +13,8 @@ public class Main {
        Saiyan secondSaiyan = new Saiyan("Vegeta", 8000,40);
 //        BasicCalculator newCalculator = new BasicCalculator();
 //        newCalculator.calculate;
-        BasicCalculator.calculate();
+        //BasicCalculator.calculate();
+        PayrollCalculator.payrollPrompt();
 
 
 

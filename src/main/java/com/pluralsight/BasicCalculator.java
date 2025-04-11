@@ -20,6 +20,7 @@ public class BasicCalculator {
         System.out.println("Possible calculations:\n(A)-Add\n(S)-Subtract\n(M)-Multiply\n(D)-Divide");
         System.out.println("Please select an option: ");
         option = scanner.next();
+
         if(option.equals("M") || option.equals("m")){
             answer = firstNumber * secondNumber;
             System.out.printf("Answer is: %.2f", answer);
