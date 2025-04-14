@@ -6,24 +6,32 @@ public class PayrollCalculator {
     public static void payrollPrompt(){
         Scanner scanner = new Scanner(System.in);
         String name;
-        float hoursWorked, payRate, money;
+        int weeklyHour= 40;
+        float hoursWorked, payRate, money, overPay, overHour;
 
-        System.out.println("Enter your name: ");
+        System.out.print("Enter your name: ");
         name = scanner.nextLine();
-        System.out.println("Enter hours worked: ");
+        System.out.print("Enter hours worked: ");
         hoursWorked = scanner.nextFloat();
-        System.out.println("Enter pay rate: ");
+        System.out.print("Enter pay rate: ");
         payRate = scanner.nextFloat();
 
-        money = hoursWorked * payRate;
+        if(hoursWorked > 40){
+            overHour = hoursWorked - weeklyHour;
+            overPay = (1.5f * payRate) * overHour;
+            float beforeOvertime = weeklyHour * payRate;
+            money = weeklyHour * payRate + overPay;
 
-        System.out.println("Employee Name: " +name);
-        System.out.printf("Gross pay: %.2f", money);
-
-
-
-
-
+            System.out.println("\nEmployee Name: " +name);
+            System.out.println("Hours overtime: " + overHour);
+            System.out.println("Overtime pay: " + overPay);
+            System.out.println("Gross pay before overtime: " + beforeOvertime );
+            System.out.printf("Total Gross pay: %.2f \n", money);
+        }else if (hoursWorked <= 40){
+            money = hoursWorked * payRate;
+            System.out.println("\nEmployee Name: " +name);
+            System.out.printf("Total Gross pay: %.2f \n", money);
+        }
+        scanner.close();
     }
-
 }
